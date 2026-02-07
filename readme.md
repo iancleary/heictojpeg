@@ -42,9 +42,13 @@ Total HEIC files size: 311.0MB
 Total JPEG folder size: 280.4MB
 ```
 
-## Source
+## Attribution
 
-Fork this repo and customize it to your needs.
+This repository is an independently maintained continuation inspired by the original work from `cckalen/heictojpeg`:
+
+- https://github.com/cckalen/heictojpeg
+
+Credit to the original author for the initial project and concept.
  
 ## License
 
