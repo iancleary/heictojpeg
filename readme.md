@@ -4,12 +4,15 @@ A simple and lightweight executable for converting `.heic` files to `.jpg`.
 
 ## Description
 
-During a flight/travel, driven by the frustration of not finding an efficient free tool, I wrote this program to convert .heic images to .jpg. Simply place it in a directory with .heic files, and on execution, it will save the converted .jpg images in a "jpegs" subfolder. It's written  with concurrency and multi-threading for optimized performance.
+This project converts `.heic` images to `.jpg` and writes the results to a `jpegs` subfolder. It is designed to process batches quickly using concurrency.
 
 ## Features
 
 - Converts `.heic` files to `.jpg` format.
-- Automatically detects `.heic` files in a target directory (or a single file path).
+- Supports three input modes:
+  - no argument (current directory)
+  - path to a directory (all `.heic` files in that directory)
+  - path to a single file (just that file)
 - Saves the converted `.jpg` files in a dedicated subfolder.
 - Extremely fast, utilizing multi-threading and concurrency.
 - Provides a log file with details of the conversion. 
@@ -36,12 +39,11 @@ If release assets are available, download the binary for your OS from the GitHub
 
 ## Usage
 
-1. Download the executable(.exe) in the repo.
-2. Run the executable with an optional first argument:
-   - No argument: processes the current directory.
-   - Directory path: processes all `.heic` files in that directory.
-   - File path: processes that single `.heic` file.
-3. Check the `jpegs` subfolder in the target directory for the converted `.jpg` images.
+1. Run the executable with an optional first argument:
+   - No argument: process `.heic` files in the current directory.
+   - Directory path: process all `.heic` files in that directory.
+   - File path: process only that `.heic` file.
+2. Check the `jpegs` subfolder in the target directory for converted `.jpg` images.
 
 
 ## Sample Output
