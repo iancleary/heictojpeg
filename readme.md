@@ -14,6 +14,26 @@ During a flight/travel, driven by the frustration of not finding an efficient fr
 - Extremely fast, utilizing multi-threading and concurrency.
 - Provides a log file with details of the conversion. 
 
+## Installation
+
+### Option 1: Build from source (recommended)
+
+```bash
+git clone https://github.com/iancleary/heictojpeg.git
+cd heictojpeg
+go build -o heictojpeg .
+```
+
+### Option 2: Install with Go
+
+```bash
+go install github.com/iancleary/heictojpeg@latest
+```
+
+### Option 3: Download a release binary
+
+If release assets are available, download the binary for your OS from the GitHub Releases page and run it directly.
+
 ## Usage
 
 1. Download the executable(.exe) in the repo.
