@@ -28,7 +28,7 @@ fn get_heic_files(dir: &Path) -> Result<Vec<PathBuf>, Box<dyn std::error::Error>
         let path = entry.path();
         if path.is_file() {
             if let Some(ext) = path.extension() {
-                if ext.to_ascii_lowercase() == "heic" {
+                if ext.eq_ignore_ascii_case("heic") {
                     files.push(path);
                 }
             }
@@ -68,10 +68,7 @@ fn human_readable_size(bytes: u64) -> String {
 }
 
 /// Process all HEIC files, converting them to JPEG in parallel.
-fn process_files(
-    heic_files: &[PathBuf],
-    jpeg_dir: &Path,
-) -> Vec<(String, Result<(), String>)> {
+fn process_files(heic_files: &[PathBuf], jpeg_dir: &Path) -> Vec<(String, Result<(), String>)> {
     use rayon::prelude::*;
 
     heic_files
@@ -185,9 +182,7 @@ impl Command {
         }
 
         if args.len() > 2 {
-            return Err(
-                "too many arguments, expecting: heictojpeg [path]".into(),
-            );
+            return Err("too many arguments, expecting: heictojpeg [path]".into());
         }
 
         Self::run_conversion(&args[1])
@@ -281,10 +276,7 @@ pub fn print_help() {
     );
     println!("    {} heictojpeg ~/Photos{}", GREEN, RESET);
     println!();
-    println!(
-        "    {} # Convert a single file{}",
-        CYAN, RESET
-    );
+    println!("    {} # Convert a single file{}", CYAN, RESET);
     println!("    {} heictojpeg photo.heic{}", GREEN, RESET);
     println!();
 }

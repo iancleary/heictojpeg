@@ -7,10 +7,7 @@ use img_parts::ImageEXIF;
 use libheif_rs::{ColorSpace, HeifContext, LibHeif, RgbChroma};
 
 /// Convert a HEIC file to JPEG, preserving EXIF data.
-pub fn convert_heic_to_jpeg(
-    input: &Path,
-    output: &Path,
-) -> Result<(), Box<dyn std::error::Error>> {
+pub fn convert_heic_to_jpeg(input: &Path, output: &Path) -> Result<(), Box<dyn std::error::Error>> {
     let lib_heif = LibHeif::new();
     let ctx = HeifContext::read_from_file(input.to_str().ok_or("Invalid input path")?)?;
     let handle = ctx.primary_image_handle()?;
@@ -57,9 +54,7 @@ pub fn convert_heic_to_jpeg(
 }
 
 /// Extract EXIF data from a HEIF image handle.
-fn extract_exif_from_heif(
-    handle: &libheif_rs::ImageHandle,
-) -> Option<Vec<u8>> {
+fn extract_exif_from_heif(handle: &libheif_rs::ImageHandle) -> Option<Vec<u8>> {
     let exif_fourcc: four_cc::FourCC = four_cc::FourCC(*b"Exif");
     let count = handle.number_of_metadata_blocks(exif_fourcc) as usize;
     if count == 0 {
