@@ -2,3 +2,9 @@
 
 heictojpeg
 .gocache/
+
+
+# Added by cargo
+
+/target
+testdata/images/jpegs/

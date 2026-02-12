@@ -1,0 +1,22 @@
+[package]
+authors = ["Ian Cleary <rust@iancleary.me>"]
+description = "Convert HEIC images to JPEG format with EXIF preservation"
+documentation = "https://docs.rs/heictojpeg"
+edition = "2021"
+homepage = "https://github.com/iancleary/heictojpeg"
+license = "MIT"
+name = "heictojpeg"
+repository = "https://github.com/iancleary/heictojpeg"
+version = "0.1.0"
+
+[dependencies]
+libheif-rs = "1"
+image = { version = "0.25", default-features = false, features = ["jpeg"] }
+rayon = "1"
+img-parts = "0.3"
+walkdir = "2"
+four-cc = "0.4"
+
+[features]
+default = ["cli"]
+cli = []
