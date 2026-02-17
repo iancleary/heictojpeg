@@ -1,0 +1,8 @@
+goheif-camel.heic 329.6KB > Converted > jpegs/goheif-camel.jpg 697.8KB
+libheif-example.heic 701.3KB > Converted > jpegs/libheif-example.jpg 688.6KB
+
+2 Files
+Total Time Taken==386.642584ms
+Average Time Per File==193.321292ms
+Total HEIC File Size==1.0MB
+Total JPEG Folder Size==1.4MB
